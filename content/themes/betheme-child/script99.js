@@ -403,7 +403,7 @@ jQuery(document).ready(function() {
             break;
           }
 
-          changelogs += '# ' + e.name + '\r\n';
+          changelogs += '\r\n# ' + e.name + '\r\n';
           changelogs += e.body;
           count += 1;
         };
