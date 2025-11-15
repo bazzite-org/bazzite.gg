@@ -635,6 +635,15 @@ jQuery(document).ready(function() {
       jQuery('.sha256-liveiso').attr('href', 'https://download.bazzite.gg/' + imagename + '-stable-live.iso-CHECKSUM');
       jQuery('.ghcr-details').attr('href', 'https://ghcr.io/ublue-os/' + imagename);
 
+      // Hide live ISO button and checksum for ASUS hardware (no live ISO available)
+      if (asusHardware.includes(hardware)) {
+        jQuery('.button-liveiso').hide();
+        jQuery('.sha256-liveiso').hide();
+      } else {
+        jQuery('.button-liveiso').show();
+        jQuery('.sha256-liveiso').show();
+      }
+
       //Show Videos
       jQuery('.video-container > .fade-transition').removeClass('shown-fade').addClass('hidden-fade');
       jQuery('.video-container > .fade-transition.' + hardware).removeClass('hidden-fade').addClass('shown-fade');
