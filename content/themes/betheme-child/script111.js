@@ -609,6 +609,10 @@ jQuery(document).ready(function() {
       imagename = imagename.replace('bazzite', 'bazzite-deck')
     }
 
+    // It's possible to get bazzite-deck-deck if the user selects anything with gamemode and then changes
+    // hardware selection to handheld. This fixes that.
+    imagename = imagename.replace('deck-deck', 'deck');
+
     if (gpuVendor === "amd" && steamGameMode === 'yes' && !gamemodeHardware.includes(hardware) && !apuHardware.includes(hardware) && hardware != 'virtualmachine') {
       jQuery('#image-builder .gamemode-noigpu').removeClass('hidden-fade').addClass('shown-fade');
     } else {
